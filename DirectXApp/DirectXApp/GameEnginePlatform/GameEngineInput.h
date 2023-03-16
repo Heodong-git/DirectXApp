@@ -44,18 +44,23 @@ public:
 	GameEngineInput& operator=(const GameEngineInput& _Other) = delete;
 	GameEngineInput& operator=(GameEngineInput&& _Other) noexcept = delete;
 
+	// 업데이트 
 	static void Update(float _DeltaTime);
+	// 키생성
 	static void CreateKey(const std::string_view& _Name, int _Key);
 
-	// 키가 저장되어 있는지?
+	// 인자로 넣어준 이름으로 이미 키가 생성되어 있는지? 
 	static bool IsKey(const std::string_view& _Name);
 
 	static bool IsDown(const std::string_view& _Name);
 	static bool IsUp(const std::string_view& _Name);
 	static bool IsPress(const std::string_view& _Name);
 	static bool IsFree(const std::string_view& _Name);
+
+	// 키가 눌려있던 시간체크, 일정시간 이상 눌렀다면 추가로 코드작성할 때 사용하면 될듯. 
 	static float GetPressTime(const std::string_view& _Name);
 
+	// 현재 아무키가 눌렸는지
 	static bool IsAnyKey()
 	{
 		return IsAnyKeyValue;
@@ -68,6 +73,7 @@ private:
 	GameEngineInput();
 	~GameEngineInput();
 
+	// string 을 키값으로 map 에 키저장
 	static std::map<std::string, GameEngineKey> Keys;
 
 	// 아무키 체크

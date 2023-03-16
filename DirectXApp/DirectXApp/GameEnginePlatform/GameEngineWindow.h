@@ -12,8 +12,9 @@ public:
 	// 윈도우 생성함수 
 	static void WindowCreate(HINSTANCE _hInstance, const std::string_view& _TitleName, float4 _Size, float4 _Pos);
 
-	// 창의크기, 좌표설정
+	// 창의크기 세팅
 	static void SettingWindowSize(float4 _Size);
+	// 창이 생성될 좌상단의 좌표세팅
 	static void SettingWindowPos(float4 _Pos);
 
 	// 스크린사이즈 반환
@@ -47,6 +48,7 @@ public:
 
 	static void DoubleBufferClear();
 	static void DoubleBufferRender();
+
 	// 윈도우 무한루프 ( 클라이언트 창을 종료하지 않고 계속해서 실행되도록 )
 	// 함수포인터의 인자를 받아주는 이유는 한가지의 종류가 아닌 
 	// 다른 프로그램의 로직이 작성된 함수를 넣어주기만 하면 실행시켜줄 수 있도록 하기 위함이다.
@@ -54,6 +56,7 @@ public:
 	// callback 기반 
 	static int WindowLoop(void(*_Start)(), void(*_Loop)(), void(*_End)());
 
+	// 현재 마우스 포지션을 받아온다. 
 	static float4 GetMousePosition();
 
 	GameEngineWindow();

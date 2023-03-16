@@ -4,6 +4,9 @@
 #include <string>
 #include <vector>
 
+// Math 클래스 제작이유 
+// 방향, 위치등을 하나의 단위로 표현하고, 프로젝트에서 사용할 수학의 집합으로 사용하기 위해서.
+
 
 // final 키워드 : 해당 키워드가 입력되어 있다면 그 클래스는 상속을 내리지 못한다.
 class GameEngineMath final
@@ -263,7 +266,3 @@ public:
 		return std::string(ArrReturn);
 	}
 };
-
-// 클래스를 만든 이유.
-// 좌표값을 하나의 변수로 표현할 수 있게 하고
-// 방향고정값등을 편리하게 사용하기 위해서. 

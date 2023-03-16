@@ -23,12 +23,15 @@ std::string GameEngineString::ToUpper(const std::string_view& _Str)
 	return Text;
 }
 
+// 정수를 string 으로 변환
 std::string GameEngineString::ToString(int Value)
 {
 	return std::to_string(Value);
 }
 
 
+
+// ---------------------------- 문자열 변환 ---------------------------------- 
 std::wstring GameEngineString::AnsiToUniCode(const std::string_view& _Text) 
 {
 	int Size = MultiByteToWideChar(CP_ACP, 0, _Text.data(), static_cast<int>(_Text.size()), nullptr, 0);

@@ -83,6 +83,7 @@ public:
 		return IsCut;
 	}
 
+	// 이미지가 몇분할되었는지 반환
 	bool GetImageCuttingCount()
 	{
 		return ImageCutDatas.size();
@@ -137,9 +138,8 @@ public:
 	void AlphaCopy(const GameEngineImage* _OtherImage, float4 _CopyCenterPos, float4 _CopySize, float4 _OtherImagePos, float4 _OtherImageSize, int _Alpha);
 	void AlphaCopy(const GameEngineImage* _OtherImage, int _CutIndex, float4 _CopyCenterPos, float4 _CopySize, int _Color);
 
-
+	
 	DWORD GetPixelColor(float4 _Pos, DWORD _OutColor);
-
 	DWORD GetPixelColor(int _X, int _Y, DWORD _OutColor);
 
 protected:

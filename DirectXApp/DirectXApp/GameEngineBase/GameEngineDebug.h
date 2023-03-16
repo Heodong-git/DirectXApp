@@ -3,8 +3,8 @@
 #include <assert.h>
 #include <string>
 
+// 이 프로젝트에서 사용할 디버깅 기능을 모아두고 편리하게 사용하기 위해서 제작
 
-// 프로젝트의 디버그와 관련 된 기능들을 모아두고 사용하기 위해 클래스 제작
 class GameEngineDebug
 {
 public:

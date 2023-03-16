@@ -30,10 +30,8 @@ void GameEngineSerializer::Write(const void* _Ptr, size_t _Size)
 	Offset += _Size;
 }
 
-// 만약 정수 2 가 들어왔다면?
 void GameEngineSerializer::Write(const int& _Value)
 {
-	// 2 , 4 를 넘겨준다. 
 	Write(&_Value, sizeof(int));
 }
 
