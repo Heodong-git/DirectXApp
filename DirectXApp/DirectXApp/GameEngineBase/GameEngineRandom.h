@@ -1,12 +1,11 @@
 #pragma once
 #include <random>
 
-// 설명 :
+// 랜덤한 값을 만들어낼 때 사용하기 위한 클래스 
 class GameEngineRandom
 {
-
 public:
-	// 딱히 나는 여러개의 랜덤을 만들필요가 없고 그냥 하나만 있으면 된다면 이녀석을 사용하면 된다.
+	// 여러개 만들필요 없을 경우 이녀석 사용
 	static GameEngineRandom MainRandom;
 
 	// constrcuter destructer
@@ -19,6 +18,7 @@ public:
 	GameEngineRandom& operator=(const GameEngineRandom& _Other) = delete;
 	GameEngineRandom& operator=(GameEngineRandom&& _Other) noexcept = delete;
 
+	// 랜덤 int 값 
 	int RandomInt(int _Min, int _Max)
 	{
 		// 이게 Creater
@@ -26,13 +26,15 @@ public:
 		return Uniform(MtGen);
 	}
 
+	// 랜덤 float 값
 	float RandomFloat(float _Min, float _Max)
 	{
 		std::uniform_real_distribution <float> Uniform(_Min, _Max);
 		return Uniform(MtGen);
 	}
 
-	void SetSeed(__int64 _Seed) 
+	// 시드값 세팅
+	void SetSeed(__int64 _Seed)
 	{
 		MtGen = std::mt19937_64(_Seed);
 	}
@@ -44,7 +46,6 @@ private:
 	// 랜덤 제너레이터 클래스와 => 여러개가 될수 있다.
 	// 메르센 트위스터 알고리즘을 사용한 제네러이터
 	std::mt19937_64 MtGen = std::mt19937_64();
-	
+
 	// 랜덤 크리에이터 클래스 => 1개
 };
-

@@ -17,9 +17,11 @@
 class GameEngineString
 {
 public:
+	// 사고방지를 위해 모두 대문자로 변환하는 함수
 	static std::string ToUpper(const std::string_view& _Str);
 	static std::string ToString(int Value);
 
+	// 
 	static std::wstring AnsiToUniCode(const std::string_view& _Text);
 	static std::string UniCodeToAnsi(const std::wstring_view& _Text);
 

@@ -2,11 +2,6 @@
 #include "GameEnginePath.h"
 #include "GameEngineSerializer.h"
 
-// 파일이라는 것은 확장자도 의미없고
-// 바이트 덩어리일 뿐이다.
-// c스타일의 파일입출력을 사용할것입니다.
-
-// 설명 :
 class GameEngineFile
 {
 public:
@@ -21,16 +16,19 @@ public:
 	//GameEngineFile& operator=(const GameEngineFile& _Other) = delete;
 	//GameEngineFile& operator=(GameEngineFile&& _Other) noexcept = delete;
 
+	// 파일의 경로를 받아온다. 
 	std::string GetFullPath() 
 	{
 		return Path.Path.string();
 	}
 
+	// 저장
 	void Save(const GameEngineSerializer& _Data);
 
 protected:
 
 private:
+	// 파일의 경로저장
 	GameEnginePath Path;
 };
 

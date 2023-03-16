@@ -2,16 +2,6 @@
 #include <chrono>
 #include <Windows.h>
 
-// 시간을 재거나 하는 기능들을 담당합니다.
-// 기본적으로 시간을 재는 방법은 여러가지가 있지만
-// 선생님은 C++ std의 최신기능인 크로노를 이용할겁니다.
-// 시간을 재는 기능은 기본적으로 CPU에 별개로 들어가 있습니다.
-// 그 하드웨어에 os가 값을 받아와서 우리에게 알려주는 개념이다.
-
-// 그래서 기본적으로 시간을 재면 정수로 표현하게 됩니다.
-// 기준을 잡습니다. 
-
-// 설명 :
 class GameEngineTime
 {
 public:
@@ -31,15 +21,15 @@ public:
 
 	float TimeCheck();
 
-	float GetFloatDeltaTime() 
+	float GetFloatDeltaTime()
 	{
 		return floatDeltaTime;
 	}
 
 protected:
-	
 
 private:
+	// 현재시간 - 이전시간
 	__int64 Tick = 0;
 	LARGE_INTEGER Prev = LARGE_INTEGER();
 	LARGE_INTEGER Current = LARGE_INTEGER();
@@ -48,3 +38,7 @@ private:
 	float floatDeltaTime = 0.0;
 };
 
+// FPS : 초당 프레임 값  
+// DeltaTime : 프레임 당 걸리는 시간  
+
+// 게임에서 사용할 DeltaTime를 구하고 사용하기 위해서
